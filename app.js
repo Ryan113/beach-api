@@ -2,7 +2,7 @@ const express = require('express');
 const ical = require('ical');
 
 const app = express();
-const port = 3000
+const port = process.env.PORT || 3000;
 
 const url = 'http://admin.vrbo.com/icalendar/ae077e5319bf4ce68271d4476a562cba.ics';
 
