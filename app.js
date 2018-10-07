@@ -5,8 +5,16 @@ const app = express();
 const port = process.env.PORT || 3000;
 
 var getDaysArray = function(start, end) {
+    // Bad way to do it, but wanted to skip the first date that is added in.
+    // This is so that people can reserve their last day (morning) when another guest
+    // has the night booked
+    count = 0;
     for(var arr=[],dt=start; dt<end; dt.setDate(dt.getDate()+1)){
+      if (count == 0) {
+        count += 1;
+      } else {
         arr.push(new Date(dt).toISOString().substring(0,10));
+        }
       }
     return arr;
 };
