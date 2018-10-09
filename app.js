@@ -87,7 +87,7 @@ app.get('/sea-grass', (req, res) => {
 
 app.get('/ocean-trail', (req, res) => {
 
-  const url = 'https://www.airbnb.com/calendar/ical/12713758.ics?s=717c33ba6048f7ce586aaa66a9795911';
+  const url = 'http://admin.vrbo.com/icalendar/4b77a55036ee48d7bdf142f99fe5ed0d.ics';
   const dates = [];
 
   ical.fromURL(url, {}, function(err, data) {
