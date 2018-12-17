@@ -1,7 +1,8 @@
 const express = require('express');
 const ical = require('ical');
-
 const app = express();
+const price = require('./dates_generator/beach-house-dates.json');
+
 const port = process.env.PORT || 3000;
 
 var getDaysArray = function(start, end) {
@@ -110,4 +111,9 @@ app.get('/ocean-trail', (req, res) => {
 
 app.listen(port, () => {
   console.log('Server is up on port: ' + port);
+});
+
+app.get('/beach-house-price', (req, res) => {
+
+  res.send(price);
 });
