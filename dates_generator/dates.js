@@ -17,7 +17,7 @@ var getDateArray = function(start, end) {
 
     dates.push({
         date: date,
-        price: '$500',
+        price: 500,
     });
   }
 }
