@@ -1,7 +1,10 @@
 const express = require('express');
 const ical = require('ical');
 const app = express();
-const price = require('./dates_generator/beach-house-dates.json');
+const beachCabin = require('./dates_generator/beach-cabin-price.json');
+const oceanTrail = require('./dates_generator/ocean-trail-price.json');
+const seaGrass = require('./dates_generator/sea-grass-price.json');
+
 
 const port = process.env.PORT || 3000;
 
@@ -115,5 +118,15 @@ app.listen(port, () => {
 
 app.get('/beach-house-price', (req, res) => {
 
-  res.send(price);
+  res.send(beachCabin);
+});
+
+app.get('/sea-grass-price', (req, res) => {
+
+  res.send(seaGrass);
+});
+
+app.get('/ocean-trail-price', (req, res) => {
+
+  res.send(oceanTrail);
 });
